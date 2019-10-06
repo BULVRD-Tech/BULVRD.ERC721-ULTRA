@@ -37,11 +37,11 @@ contract TradeableERC721Token is ERC721Full, Ownable, Pausable {
     event SubUpdateFailed(uint id);
 
     address public proxyRegistryAddress;
-    address public blvdAddress = address(0x0);
+    address public blvdAddress = address(0x3afe25a2739B5C2E08CFec439F9621D91Ff7FBFb);
     address public gatewayAddress = address(0x0);
     
-    string activeSubscriptionUri = "";
-    string expiedSubscriptionUri = "";
+    string activeSubscriptionUri = "https://raw.githubusercontent.com/BULVRD-Tech/BULVRD.ERC721-ULTRA/master/metadata/active/active.json";
+    string expiedSubscriptionUri = "https://raw.githubusercontent.com/BULVRD-Tech/BULVRD.ERC721-ULTRA/master/metadata/expired/expired.json";
     
     constructor(string memory _name, string memory _symbol) ERC721Full(_name, _symbol) public {
         
@@ -155,6 +155,11 @@ contract TradeableERC721Token is ERC721Full, Ownable, Pausable {
     //Update min tokens to be paid to renew subscription
     function updateTokenResubMin(uint256 tokens) public onlyOwner {
         tokenReSubMin = tokens;
+    }
+    
+     //Update BLVD token address
+    function updateBLVDAddress(address _blvdToken) public onlyOwner {
+        blvdAddress = _blvdToken;
     }
     
     //Update proxy address, mainly used for OpenSea
