@@ -1,0 +1,11 @@
+{
+  "name": "BLVD U L T R A : Active",
+  "image": "https://raw.githubusercontent.com/BULVRD-Tech/BULVRD.ERC721-ULTRA/master/metadata/active/active.png", 
+  "description": "BLVD U L T R A  Active Subscription. Enables advance functionality within the BULVRD Drive Android and iOS apps.", 
+  "attributes": {
+    "status": "Active",
+    "blocksPerBlvd": 156
+  },
+  "external_url": "https://bulvrdapp.com/portal/ultra", 
+  "background_color": "890063"
+}
