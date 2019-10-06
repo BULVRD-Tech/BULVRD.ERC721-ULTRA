@@ -1,0 +1,11 @@
+{
+  "name": "BLVD U L T R A : Expired",
+  "image": "https://raw.githubusercontent.com/BULVRD-Tech/BULVRD.ERC721-ULTRA/master/metadata/expired/expired.png", 
+  "description": "BLVD U L T R A  Expired Subscription. Activate by using BLVD earnings to extend the subscription", 
+  "attributes": {
+    "status": "Expired",
+    "blocksPerBlvd": 156
+  },
+  "external_url": "https://bulvrdapp.com/portal/ultra", 
+  "background_color": "010B3C"
+}
