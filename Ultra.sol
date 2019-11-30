@@ -85,7 +85,7 @@ contract TradeableERC721Token is ERC721Full, Ownable, Pausable {
   }
   
   function renewSubscription(uint _tokenId, uint256 tokenAmount ) public{
-      require(tokenReSubMin < tokenAmount, "You must provide more tokens to update subsccription");
+      require(tokenReSubMin < tokenAmount, "You must provide more tokens to update subscription");
        SUB storage _sub = subscriptionObjectForTokenId(_tokenId);
        
        bool result = ERC20(blvdAddress).transferFrom(msg.sender, owner(), tokenAmount);
@@ -128,6 +128,17 @@ contract TradeableERC721Token is ERC721Full, Ownable, Pausable {
             return expiedSubscriptionUri;
         }
         // return _styles[_tokenIdToStyle[_tokenId]].metaUrl;
+    } 
+
+    function subscripionIsActive(uint256 _tokenId) public view returns (bool) {
+        SUB storage _sub = subscriptionObjectForTokenId(_tokenId);
+        if (_sub.expBlock < block.number){
+            //subscription is valid
+            return true;
+        }else{
+            //subscription is expired
+            return false;
+        }
     } 
 
     //Returns SUB object based on the tokenId
